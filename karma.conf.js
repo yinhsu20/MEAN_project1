@@ -17,7 +17,6 @@ module.exports = function(config) {
     files: [
       'vendor/lodash/lodash.js',
       'app/**/*.js',
-      'spec/app/my_world_service.js',
       'spec/app/my_world_service_spec.js'
     ],
 
