@@ -73,53 +73,59 @@ describe("MyWorldService", function() {
     it("returns people in alpha order", function() {
       expect(allPeople).toEqual([curly, larry, moe, shep]);
     });
-    return;
+    
     describe("passing in true for active", function() {
       it("returns only active people", function() {
         expect(activePeople).toEqual([curly, larry, moe]);
       });
     });
+
+    describe("#getPerson", function() {
+      var _moe, _shep;
+      beforeEach(function() {
+        _moe = service.getPerson("Moe");
+        _shep = service.getPerson("Shep");
+      });
+      describe("when passing in Moe", function() {
+        it("returns Moe", function() {
+          expect(_moe).toEqual(moe);
+        });
+      });
+      describe("when passing in Shep", function() {
+        it("returns Shep", function() {
+          expect(_shep).toEqual(shep);
+        });
+      });
+    });
+    
+    describe("#getThings", function() {
+      var _things;
+      beforeEach(function() {
+        _things = service.getThings();
+      });
+      it("returns Paper, Rock, Scissors", function() {
+        expect(_things).toEqual([paper, rock, scissors]);
+      });
+    });
+    
+    describe("#getThing", function() {
+      var _rock;
+      beforeEach(function() {
+        _rock = service.getThing("Rock");
+      });
+      describe("with 'Rock'", function() {
+        it("returns a Rock", function() {
+          expect(_rock).toEqual(rock);
+        });
+      });
+    });
+    
+    return;
+    
   });
+  
   /*
-  describe("#getPerson", function() {
-    var _moe, _shep;
-    beforeEach(function() {
-      _moe = service.getPerson("Moe");
-      _shep = service.getPerson("Shep");
-    });
-    describe("when passing in Moe", function() {
-      it("returns Moe", function() {
-        expect(_moe).toEqual(moe);
-      });
-    });
-    describe("when passing in Shep", function() {
-      it("returns Shep", function() {
-        expect(_shep).toEqual(shep);
-      });
-    });
-  });
-
-  describe("#getThings", function() {
-    var _things;
-    beforeEach(function() {
-      _things = service.getThings();
-    });
-    it("returns Paper, Rock, Scissors", function() {
-      expect(_things).toEqual([paper, rock, scissors]);
-    });
-  });
-
-  describe("#getThing", function() {
-    var _rock;
-    beforeEach(function() {
-      _rock = service.getThing("Rock");
-    });
-    describe("with 'Rock'", function() {
-      it("returns a Rock", function() {
-        expect(_rock).toEqual(rock);
-      });
-    });
-  });
+  
 
   describe("things", function() {
     var _things;
