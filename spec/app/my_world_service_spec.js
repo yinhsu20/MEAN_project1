@@ -64,7 +64,7 @@ describe("MyWorldService", function() {
     });
   });
 
-  /*describe("#getPeople", function() {
+  describe("#getPeople", function() {
     var allPeople, activePeople;
     beforeEach(function() {
       allPeople = service.getPeople();
@@ -73,12 +73,13 @@ describe("MyWorldService", function() {
     it("returns people in alpha order", function() {
       expect(allPeople).toEqual([curly, larry, moe, shep]);
     });
+    return;
     describe("passing in true for active", function() {
       it("returns only active people", function() {
         expect(activePeople).toEqual([curly, larry, moe]);
       });
     });
-  });*/
+  });
   /*
   describe("#getPerson", function() {
     var _moe, _shep;
