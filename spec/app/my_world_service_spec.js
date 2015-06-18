@@ -119,24 +119,20 @@ describe("MyWorldService", function() {
         });
       });
     });
-    
     return;
-    
+    describe("things", function() {
+      var _things;
+      beforeEach(function() {
+        var moe = service.getPerson("Moe");
+        _things = moe.things;
+      });
+      it("Moe has no things", function() {
+        expect(_things).toEqual([]);
+      });
+    });
   });
   
   /*
-  
-
-  describe("things", function() {
-    var _things;
-    beforeEach(function() {
-      var moe = service.getPerson("Moe");
-      _things = moe.things;
-    });
-    it("Moe has no things", function() {
-      expect(_things).toEqual([]);
-    });
-  });
 
   describe("#acquireThing()", function() {
     describe("Giving Moe a Rock", function() {
